@@ -63,7 +63,7 @@
                         <thead>
                             <tr>
                                 <th data-options="field:'EquipmentId',width:110, hidden:true">设备ID</th>
-                                <th data-options="field:'EquipmentName',width:120">设备名称</th>
+                                <th data-options="field:'Name',width:120">设备名称</th>
                                 <th data-options="field:'运转率',width:120">运转率(%)</th>
                                 <th data-options="field:'可靠性',width:120">可靠性(%)</th>
                                 <th data-options="field:'故障率',width:120">故障率(%)</th>

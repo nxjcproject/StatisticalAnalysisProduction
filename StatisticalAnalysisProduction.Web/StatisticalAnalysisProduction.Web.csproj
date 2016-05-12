@@ -1578,9 +1578,12 @@
     <Content Include="lib\pllib\themes\jquery.jqplot.min.css" />
     <Content Include="UI_RunIndicatorsStatisitics\js\page\RunIndicatorsStatisitics.js" />
     <Content Include="UI_RunIndicatorsStatisitics\js\page\RunIndicatorsStatisiticsMonthly.js" />
+    <Content Include="UI_RunIndicatorsStatisitics\js\page\TimeLineChart.js" />
     <Content Include="UI_RunIndicatorsStatisitics\RunIndicatorsStatisitics.aspx" />
     <Content Include="UI_RunIndicatorsStatisitics\RunIndicatorsStatisiticsMonthly.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

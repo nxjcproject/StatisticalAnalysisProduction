@@ -39,8 +39,19 @@ namespace StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics
         public static string GetRunindicatorsInfo(string myEquipmentCommonId, string myFactoryOrganizationId, string myStartTime, string myEndTime)
         {
             string[] m_RunIndictorsList = new string[] {"运转率","可靠性","故障率","台时产量","运转时间", "计划检修时间" };
-            DataTable m_RunIndictorsDetailTable = RunIndicators.EquipmentRunIndicators.GetEquipmentUtilizationByCommonId(m_RunIndictorsList, myEquipmentCommonId, myFactoryOrganizationId, myStartTime, myEndTime, _dataFactory);
-            string m_ReturnString = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(m_RunIndictorsDetailTable);
+            DataTable m_RunIndictorsDetailTable = RunIndicators.EquipmentRunIndicators.GetEquipmentCommonUtilization(m_RunIndictorsList, new string[] {myEquipmentCommonId}, myFactoryOrganizationId, myStartTime, myEndTime, _dataFactory);
+            if (m_RunIndictorsDetailTable != null)
+            {
+                for (int i = 0; i < m_RunIndictorsDetailTable.Rows.Count; i++)
+                {
+                    m_RunIndictorsDetailTable.Rows[i]["运转率"] = (decimal)m_RunIndictorsDetailTable.Rows[i]["运转率"] * 100;
+                    m_RunIndictorsDetailTable.Rows[i]["可靠性"] = (decimal)m_RunIndictorsDetailTable.Rows[i]["可靠性"] * 100;
+                    m_RunIndictorsDetailTable.Rows[i]["故障率"] = (decimal)m_RunIndictorsDetailTable.Rows[i]["故障率"] * 100;
+                }
+            }
+            DataView m_RunIndictorsDetailView = m_RunIndictorsDetailTable.DefaultView;
+            m_RunIndictorsDetailView.Sort = "Name Asc";
+            string m_ReturnString = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(m_RunIndictorsDetailView.ToTable());
             return m_ReturnString;
         }
         public static string GetMachineHaltInfo(string myEquipmentCommonId, string myFactoryOrganizationId, string myStartTime, string myEndTime)

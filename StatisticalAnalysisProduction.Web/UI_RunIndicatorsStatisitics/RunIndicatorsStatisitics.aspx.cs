@@ -18,7 +18,7 @@ namespace StatisticalAnalysisProduction.Web.UI_RunIndicatorsStatisitics
             {
                 ////////////////////调试用,自定义的数据授权
 #if DEBUG
-                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_ychc", "zc_nxjc_qtx" };
+                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_ychc", "zc_nxjc_byc" };
                 AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
                 mPageOpPermission = "1111";
 #elif RELEASE
@@ -37,17 +37,35 @@ namespace StatisticalAnalysisProduction.Web.UI_RunIndicatorsStatisitics
         [WebMethod]
         public static string GetRunindicatorsInfo(string myOrganizationId, string myEquipmentCommonId, string myStartMonth)
         {
-            DateTime m_EndTime = DateTime.Parse(myStartMonth + "-01").AddMonths(1).AddDays(-1);
+            DateTime m_StartTime = DateTime.Parse(myStartMonth + "-01");
+            string m_EndTime = "";
+            if (m_StartTime.AddMonths(1).AddDays(-1) > DateTime.Now)      //如果选定的日期是当前月
+            {
+                m_EndTime = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                m_EndTime = DateTime.Parse(myStartMonth + "-01").AddMonths(1).AddDays(-1).ToString("yyyy-MM-dd");
+            }
 
-            string m_RunIndictorsDetailValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisitics.GetRunindicatorsInfo(myEquipmentCommonId, myOrganizationId, myStartMonth + "-01", m_EndTime.ToString("yyyy-MM-dd"));
+            string m_RunIndictorsDetailValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisitics.GetRunindicatorsInfo(myEquipmentCommonId, myOrganizationId, myStartMonth + "-01", m_EndTime);
             return m_RunIndictorsDetailValue;
         }
         [WebMethod]
         public static string GetMachineHaltInfo(string myOrganizationId, string myEquipmentCommonId, string myStartMonth)
         {
-            DateTime m_EndTime = DateTime.Parse(myStartMonth + "-01").AddMonths(1).AddDays(-1);
+            DateTime m_StartTime = DateTime.Parse(myStartMonth + "-01");
+            string m_EndTime = "";
+            if (m_StartTime.AddMonths(1).AddDays(-1) > DateTime.Now)      //如果选定的日期是当前月
+            {
+                m_EndTime = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                m_EndTime = DateTime.Parse(myStartMonth + "-01").AddMonths(1).AddDays(-1).ToString("yyyy-MM-dd");
+            }
 
-            string m_ReturnValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisitics.GetMachineHaltInfo(myEquipmentCommonId, myOrganizationId, myStartMonth + "-01", m_EndTime.ToString("yyyy-MM-dd"));
+            string m_ReturnValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisitics.GetMachineHaltInfo(myEquipmentCommonId, myOrganizationId, myStartMonth + "-01", m_EndTime);
             return m_ReturnValue;
         }
     }

@@ -36,11 +36,11 @@
                                     <input id="StartTimeF" class="easyui-datetimespinner" style="width: 80px" />
                                 </td>
                                 <td>生产区域</td>
-                                <td style="width: 100px;">
+                                <td style="width: 130px;">
                                     <input id="TextBox_OrganizationText" class="easyui-textbox" data-options="editable:false, readonly:true" style="width: 120px;" />
                                 </td>
                                 <td>主要设备</td>
-                                <td style="width: 100px;">
+                                <td style="width:130px;">
                                     <select id="Combobox_EquipmentCommonF" class="easyui-combobox" name="Combobox_EquipmentCommonF" data-options="panelHeight:'auto', editable:true, valueField: 'EquipmentCommonId',textField: 'Name'" style="width: 120px;"></select>
                                 </td>
                                 <td>
@@ -63,12 +63,13 @@
                         <thead>
                             <tr>
                                 <th data-options="field:'EquipmentId',width:110, hidden:true">设备ID</th>
-                                <th data-options="field:'EquipmentName',width:120">设备名称</th>
+                                <th data-options="field:'Name',width:120">设备名称</th>
                                 <th data-options="field:'运转率',width:120">运转率(%)</th>
                                 <th data-options="field:'可靠性',width:120">可靠性(%)</th>
                                 <th data-options="field:'故障率',width:120">故障率(%)</th>
                                 <th data-options="field:'台时产量',width:120">台时产量(t/h)</th>
                                 <th data-options="field:'运转时间',width:120">运转时间(h)</th>
+                                <th data-options="field:'计划检修时间',width:120">计划检修时间(h)</th>
                             </tr>
                         </thead>
                     </table>
