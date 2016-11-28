@@ -2,4 +2,8 @@ C:\工作\编程\恒拓软件\三层框架V3.1\StatisticalAnalysisProduction\Sta
 C:\工作\编程\恒拓软件\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Infrastructure\bin\Debug\StatisticalAnalysisProduction.Infrastructure.pdb
 C:\工作\编程\恒拓软件\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Infrastructure\obj\Debug\StatisticalAnalysisProduction.Infrastructure.dll
 C:\工作\编程\恒拓软件\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Infrastructure\obj\Debug\StatisticalAnalysisProduction.Infrastructure.pdb
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Infrastructure\bin\Debug\StatisticalAnalysisProduction.Infrastructure.dll
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Infrastructure\bin\Debug\StatisticalAnalysisProduction.Infrastructure.pdb
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Infrastructure\obj\Debug\StatisticalAnalysisProduction.Infrastructure.dll
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Infrastructure\obj\Debug\StatisticalAnalysisProduction.Infrastructure.pdb
 C:\工作\编程\恒拓软件\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Infrastructure\obj\Debug\StatisticalAnalysisProduction.Infrastructure.csprojResolveAssemblyReference.cache

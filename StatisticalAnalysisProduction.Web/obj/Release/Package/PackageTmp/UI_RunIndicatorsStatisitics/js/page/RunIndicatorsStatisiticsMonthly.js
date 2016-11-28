@@ -3,7 +3,6 @@
     InitializeGrid({ "rows": [], "total": 0 });
 
     //////////////////////初始化对话框//////////////////////
-     loadQuickTrendDialog(); 
      loadQuickMachineHaltDetailDialog();
 });
 function InitializeDateTime() {
@@ -17,6 +16,8 @@ function onOrganisationTreeClick(myNode) {
     $('#TextBox_OrganizationId').attr('value', myNode.OrganizationId);  //textbox('setText', myNode.OrganizationId);
     $('#TextBox_OrganizationText').textbox('setText', myNode.text);
     //$('#TextBox_OrganizationType').textbox('setText', myNode.OrganizationType);
+    $('#Combobox_EquipmentF').combobox('clear');
+    $('#Combobox_EquipmentCommonF').combobox('clear');
     LoadEquipmentCommonInfo();
 }
 function LoadEquipmentCommonInfo() {
@@ -25,7 +26,7 @@ function LoadEquipmentCommonInfo() {
     if (m_FactoryOrganizationId != undefined && m_FactoryOrganizationId != null && m_FactoryOrganizationId != "") {
         $.ajax({
             type: "POST",
-            url: "RunIndicatorsStatisiticsMonthly.aspx/GetEquipmentInfo",
+            url: "RunIndicatorsStatisiticsMonthly.aspx/GetEquipmentCommonInfo",
             data: '{myOrganizationId:"' + m_FactoryOrganizationId + '"}',
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -41,17 +42,37 @@ function LoadEquipmentCommonInfo() {
         alert("请先选择生产区域!");
     }
 }
+function LoadEquipmentInfoByCommonId(myEquipmentCommonId) {
+    $('#Combobox_EquipmentF').combobox('clear');
+    var m_FactoryOrganizationId = $('#TextBox_OrganizationId').val();
+    $.ajax({
+        type: "POST",
+        url: "RunIndicatorsStatisiticsMonthly.aspx/GetEquipmentInfoByEquipmentCommonId",
+        data: "{myEquipmentCommonId:'" + myEquipmentCommonId + "',myOrganizationId:'" + m_FactoryOrganizationId + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (msg) {
+            var m_MsgData = jQuery.parseJSON(msg.d);
+            if (m_MsgData != null && m_MsgData != undefined) {
+                $('#Combobox_EquipmentF').combobox('loadData', m_MsgData.rows);
+            }
+        },
+        error: function (msg) {
+            alert(msg);
+        }
+    });
+}
 function RefreshStatisitics() {
     var m_OrganizationId = $('#TextBox_OrganizationId').val();
-    var m_EquipmentCommonId = $('#Combobox_EquipmentCommonF').combobox('getValue');
+    var m_EquipmentId = $('#Combobox_EquipmentF').combobox('getValue');
     var m_StartYear = $('#StartTimeF').datetimespinner('getValue');
-    if (m_OrganizationId != undefined && m_OrganizationId != null && m_EquipmentCommonId != ""
-        && m_EquipmentCommonId != undefined && m_StartYear != null && m_StartYear != "") {
+    if (m_OrganizationId != undefined && m_OrganizationId != null && m_EquipmentId != ""
+        && m_EquipmentId != undefined && m_StartYear != null && m_StartYear != "") {
 
         $.ajax({
             type: "POST",
             url: "RunIndicatorsStatisiticsMonthly.aspx/GetRunindicatorsAndHaltInfo",
-            data: "{myOrganizationId:'" + m_OrganizationId + "',myEquipmentCommonId:'" + m_EquipmentCommonId + "',myStartYear:'" + m_StartYear + "'}",
+            data: "{myOrganizationId:'" + m_OrganizationId + "',myEquipmentId:'" + m_EquipmentId + "',myStartYear:'" + m_StartYear + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (msg) {
@@ -68,13 +89,13 @@ function RefreshStatisitics() {
 }
 function MasterMachineHaltDetailFun(myStatisticalRange, myStatisticalType) {
     var m_OrganizationId = $('#TextBox_OrganizationId').val();
-    var m_EquipmentCommonId = $('#Combobox_EquipmentCommonF').combobox('getValue');
+    var m_EquipmentId = $('#Combobox_EquipmentF').combobox('getValue');
     //var $('#grid_MasterMachineHaltInfo').datagrid();
     var m_StartYear = $('#StartTimeF').datetimespinner('getValue');
     $.ajax({
         type: "POST",
         url: "RunIndicatorsStatisiticsMonthly.aspx/GetMasterMachineHaltDetail",
-        data: "{myOrganizationId:'" + m_OrganizationId + "',myEquipmentCommonId:'" + m_EquipmentCommonId + "',myStartYear:'" + m_StartYear + "',myStatisticalRange:'" + myStatisticalRange + "',myStatisticalType:'" + myStatisticalType + "'}",
+        data: "{myOrganizationId:'" + m_OrganizationId + "',myEquipmentId:'" + m_EquipmentId + "',myStartYear:'" + m_StartYear + "',myStatisticalRange:'" + myStatisticalRange + "',myStatisticalType:'" + myStatisticalType + "'}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
@@ -86,25 +107,6 @@ function MasterMachineHaltDetailFun(myStatisticalRange, myStatisticalType) {
     });
 
     $('#dlg_QuickMachineHaltDetail').dialog('open');
-}
-function TrendFun(myQuotasID, myType, myStatisticalRange, myStatisticalType) {
-    var m_OrganizationId = $('#TextBox_OrganizationId').val();
-    var m_EquipmentCommonId = $('#Combobox_EquipmentCommonF').combobox('getValue');
-    var m_StartYear = $('#StartTimeF').datetimespinner('getValue');
-    $.ajax({
-        type: "POST",
-        url: "RunIndicatorsStatisiticsMonthly.aspx/GetDetailTrend",
-        data: "{myOrganizationId:'" + m_OrganizationId + "',myEquipmentCommonId:'" + m_EquipmentCommonId + "',myStartYear:'" + m_StartYear + "',myQuotasID:'" + myQuotasID + "',myType:'" + myType + "',myStatisticalRange:'" + myStatisticalRange + "',myStatisticalType:'" + myStatisticalType + "'}",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (msg) {
-            var m_MsgData = jQuery.parseJSON(msg.d);
-            if (m_MsgData != null && m_MsgData != undefined) {
-                GetChartData("chart_QuickTrend_Content", m_MsgData);
-            }
-        }
-    });
-    $('#dlg_QuickTrend').dialog('open');
 }
 function InitializeGrid(myData) {
     grid = $('#grid_MasterMachineHaltInfo').datagrid({
@@ -201,12 +203,11 @@ function InitializeGrid(myData) {
             field: 'StatisticalType',
             hidden: true
         }, {
-            width: '50',
+            width: '40',
             title: '操作',
             field: 'Op',
             formatter: function (value, row, index) {
                 var str = '';
-                str = '<img class="iconImg" src = "/lib/extlib/themes/images/ext_icons/chart/chart_curve.png" title="趋势" onclick="TrendFun(\'' + row.QuotasID + '\',\'' + row.Type + '\',\'' + row.StatisticalRange + '\',\'' + row.StatisticalType + '\');"/>';
                 if (row["ShowDetail"] == "ShowDetail") {
                     str = str + '<img class="iconImg" src = "/lib/extlib/themes/images/ext_icons/zoom/zoom.png" title="详细信息" onclick="MasterMachineHaltDetailFun(\'' + row.StatisticalRange + '\',\'' + row.StatisticalType + '\');"/>';
                 }
@@ -221,20 +222,6 @@ function InitializeGrid(myData) {
 function loadQuickMachineHaltDetailDialog() {
     $('#dlg_QuickMachineHaltDetail').dialog({
         title: '详细信息',
-        width: 1000,
-        height: 300,
-        left: 10,
-        top: 20,
-        closed: true,
-        cache: false,
-        modal: true,
-        iconCls: 'icon-search',
-        resizable: false
-    });
-}
-function loadQuickTrendDialog() {
-    $('#dlg_QuickTrend').dialog({
-        title: '趋势',
         width: 1000,
         height: 300,
         left: 10,

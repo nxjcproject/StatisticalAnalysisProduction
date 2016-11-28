@@ -18,7 +18,7 @@ namespace StatisticalAnalysisProduction.Web.UI_RunIndicatorsStatisitics
             {
                 ////////////////////调试用,自定义的数据授权
 #if DEBUG
-                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_ychc", "zc_nxjc_byc" };
+                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_ychc", "zc_nxjc_byc","zc_nxjc_znc" };
                 AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
                 mPageOpPermission = "1111";
 #elif RELEASE
@@ -35,7 +35,13 @@ namespace StatisticalAnalysisProduction.Web.UI_RunIndicatorsStatisitics
             return m_ReturnValue;
         }
         [WebMethod]
-        public static string GetRunindicatorsInfo(string myOrganizationId, string myEquipmentCommonId, string myStartMonth)
+        public static string GetSpecificationsInfo(string myEquipmentCommonId)
+        {
+            string m_ReturnValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisitics.GetSpecificationsInfo(myEquipmentCommonId);
+            return m_ReturnValue;
+        }
+        [WebMethod]
+        public static string GetRunindicatorsInfo(string myOrganizationId, string myEquipmentCommonId, string mySpecifications, string myRunindicatorsOrder, string myStartMonth)
         {
             DateTime m_StartTime = DateTime.Parse(myStartMonth + "-01");
             string m_EndTime = "";
@@ -48,11 +54,11 @@ namespace StatisticalAnalysisProduction.Web.UI_RunIndicatorsStatisitics
                 m_EndTime = DateTime.Parse(myStartMonth + "-01").AddMonths(1).AddDays(-1).ToString("yyyy-MM-dd");
             }
 
-            string m_RunIndictorsDetailValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisitics.GetRunindicatorsInfo(myEquipmentCommonId, myOrganizationId, myStartMonth + "-01", m_EndTime);
+            string m_RunIndictorsDetailValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisitics.GetRunindicatorsInfo(myOrganizationId, myEquipmentCommonId, mySpecifications, myRunindicatorsOrder, myStartMonth + "-01", m_EndTime);
             return m_RunIndictorsDetailValue;
         }
         [WebMethod]
-        public static string GetMachineHaltInfo(string myOrganizationId, string myEquipmentCommonId, string myStartMonth)
+        public static string GetMachineHaltInfo(string myOrganizationId, string myEquipmentCommonId, string mySpecifications, string myStartMonth)
         {
             DateTime m_StartTime = DateTime.Parse(myStartMonth + "-01");
             string m_EndTime = "";
@@ -65,7 +71,7 @@ namespace StatisticalAnalysisProduction.Web.UI_RunIndicatorsStatisitics
                 m_EndTime = DateTime.Parse(myStartMonth + "-01").AddMonths(1).AddDays(-1).ToString("yyyy-MM-dd");
             }
 
-            string m_ReturnValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisitics.GetMachineHaltInfo(myEquipmentCommonId, myOrganizationId, myStartMonth + "-01", m_EndTime);
+            string m_ReturnValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisitics.GetMachineHaltInfo(myOrganizationId, myEquipmentCommonId, mySpecifications, myStartMonth + "-01", m_EndTime);
             return m_ReturnValue;
         }
     }

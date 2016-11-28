@@ -18,7 +18,7 @@ namespace StatisticalAnalysisProduction.Web.UI_RunIndicatorsStatisitics
             {
                 ////////////////////调试用,自定义的数据授权
 #if DEBUG
-                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_ychc", "zc_nxjc_qtx", "zc_nxjc_byc" };
+                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_ychc", "zc_nxjc_qtx", "zc_nxjc_byc","zc_nxjc_znc" };
                 AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
                 mPageOpPermission = "1111";
 #elif RELEASE
@@ -29,16 +29,34 @@ namespace StatisticalAnalysisProduction.Web.UI_RunIndicatorsStatisitics
             }
         }
         [WebMethod]
-        public static string GetEquipmentInfo(string myOrganizationId)
+        public static string GetEquipmentCommonInfo(string myOrganizationId)
         {
-            string m_ReturnValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisiticsMonthly.GetEquipmentInfo(myOrganizationId);
+            string m_ReturnValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisiticsMonthly.GetEquipmentCommonInfo(myOrganizationId);
             return m_ReturnValue;
         }
         [WebMethod]
-        public static string GetRunindicatorsAndHaltInfo(string myOrganizationId, string myEquipmentCommonId, string myStartYear)
+        public static string GetEquipmentInfoByEquipmentCommonId(string myEquipmentCommonId, string myOrganizationId)
         {
-            string m_RunIndictorsDetailValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisiticsMonthly.GetRunindicatorsAndHaltInfo(myEquipmentCommonId, myOrganizationId, myStartYear + "-01-01", myStartYear + "-12-31");
-            return m_RunIndictorsDetailValue;
+            string m_ReturnValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisiticsMonthly.GetEquipmentInfoByEquipmentCommonId(myEquipmentCommonId, myOrganizationId);
+            return m_ReturnValue;
+        }
+        [WebMethod]
+        public static string GetRunindicatorsAndHaltInfo(string myOrganizationId, string myEquipmentId, string myStartYear)
+        {
+            if (Int32.Parse(myStartYear) < DateTime.Now.Year)
+            {
+                string m_RunIndictorsDetailValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisiticsMonthly.GetRunindicatorsAndHaltInfo(myEquipmentId, myOrganizationId, myStartYear + "-01-01", myStartYear + "-12-31");
+                return m_RunIndictorsDetailValue;
+            }
+            else if (Int32.Parse(myStartYear) == DateTime.Now.Year)
+            {
+                string m_RunIndictorsDetailValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisiticsMonthly.GetRunindicatorsAndHaltInfo(myEquipmentId, myOrganizationId, myStartYear + "-01-01", DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd"));
+                return m_RunIndictorsDetailValue;
+            }
+            else
+            {
+                return "{\"rows\":[],\"total\":0}";
+            }
         }
         //[WebMethod]
         //public static string GetMachineHaltInfo(string myOrganizationId, string myEquipmentCommonId, string myStartYear)
@@ -49,16 +67,10 @@ namespace StatisticalAnalysisProduction.Web.UI_RunIndicatorsStatisitics
         //    return m_ReturnValue;
         //}
         [WebMethod]
-        public static string GetMasterMachineHaltDetail(string myOrganizationId, string myEquipmentCommonId, string myStatisticalRange, string myStatisticalType, string myStartYear)
+        public static string GetMasterMachineHaltDetail(string myOrganizationId, string myEquipmentId, string myStatisticalRange, string myStatisticalType, string myStartYear)
         {
-            string m_MasterMachineHaltDetailValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisiticsMonthly.GetMasterMachineHaltDetail(myOrganizationId, myEquipmentCommonId, myStatisticalRange, myStatisticalType, myStartYear);
+            string m_MasterMachineHaltDetailValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisiticsMonthly.GetMasterMachineHaltDetail(myOrganizationId, myEquipmentId, myStatisticalRange, myStatisticalType, myStartYear);
             return m_MasterMachineHaltDetailValue;
-        }
-        [WebMethod]
-        public static string GetDetailTrend(string myOrganizationId, string myEquipmentCommonId, string myStartYear, string myQuotasID, string myType, string myStatisticalRange, string myStatisticalType)
-        {
-            string m_DetailTrendValue = StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics.RunIndicatorsStatisiticsMonthly.GetDetailTrend(myOrganizationId, myEquipmentCommonId, myStartYear, myQuotasID, myType, myStatisticalRange, myStatisticalType);
-            return m_DetailTrendValue;
         }
     }
 }

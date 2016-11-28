@@ -33,7 +33,8 @@
     <Reference Include="EasyUIJsonParser">
       <HintPath>..\..\Lib\EasyUIJsonParser.dll</HintPath>
     </Reference>
-    <Reference Include="RunIndicators">
+    <Reference Include="RunIndicators, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\组件\RunIndicators\RunIndicators\bin\Debug\RunIndicators.dll</HintPath>
     </Reference>
     <Reference Include="SqlServerDataAdapter">

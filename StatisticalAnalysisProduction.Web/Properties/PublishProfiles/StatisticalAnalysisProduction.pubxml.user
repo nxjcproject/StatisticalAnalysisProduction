@@ -20,22 +20,22 @@
       <publishTime>01/18/2016 14:08:49</publishTime>
     </File>
     <File Include="bin/mDbDataAdaper.dll">
-      <publishTime>11/03/2014 00:58:52</publishTime>
+      <publishTime>04/04/2016 12:02:41</publishTime>
     </File>
     <File Include="bin/RunIndicators.dll">
-      <publishTime>05/09/2016 15:55:28</publishTime>
+      <publishTime>10/12/2016 16:57:12</publishTime>
     </File>
     <File Include="bin/SqlServerDataAdapter.dll">
-      <publishTime>01/18/2016 14:08:49</publishTime>
+      <publishTime>07/29/2015 10:56:04</publishTime>
     </File>
     <File Include="bin/StatisticalAnalysisProduction.Infrastructure.dll">
-      <publishTime>04/28/2016 09:22:55</publishTime>
+      <publishTime>10/30/2016 17:53:35</publishTime>
     </File>
     <File Include="bin/StatisticalAnalysisProduction.Service.dll">
-      <publishTime>05/09/2016 16:32:43</publishTime>
+      <publishTime>11/01/2016 14:20:28</publishTime>
     </File>
     <File Include="bin/StatisticalAnalysisProduction.Web.dll">
-      <publishTime>05/09/2016 16:32:45</publishTime>
+      <publishTime>11/01/2016 14:20:29</publishTime>
     </File>
     <File Include="bin/WebStyleBaseForEnergy.dll">
       <publishTime>01/18/2016 14:08:49</publishTime>
@@ -4577,22 +4577,22 @@
       <publishTime>12/07/2014 00:01:34</publishTime>
     </File>
     <File Include="UI_RunIndicatorsStatisitics/js/page/RunIndicatorsStatisitics.js">
-      <publishTime>04/17/2016 17:23:41</publishTime>
+      <publishTime>09/20/2016 11:23:02</publishTime>
     </File>
     <File Include="UI_RunIndicatorsStatisitics/js/page/RunIndicatorsStatisiticsMonthly.js">
-      <publishTime>04/28/2016 10:26:18</publishTime>
+      <publishTime>07/07/2016 16:32:23</publishTime>
     </File>
     <File Include="UI_RunIndicatorsStatisitics/js/page/TimeLineChart.js">
       <publishTime>04/28/2016 09:20:47</publishTime>
     </File>
     <File Include="UI_RunIndicatorsStatisitics/RunIndicatorsStatisitics.aspx">
-      <publishTime>05/09/2016 11:48:37</publishTime>
+      <publishTime>09/20/2016 11:25:53</publishTime>
     </File>
     <File Include="UI_RunIndicatorsStatisitics/RunIndicatorsStatisiticsMonthly.aspx">
-      <publishTime>05/09/2016 15:29:44</publishTime>
+      <publishTime>07/07/2016 16:29:39</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/09/2016 16:32:56</publishTime>
+      <publishTime>11/01/2016 14:20:56</publishTime>
     </File>
   </ItemGroup>
 </Project>

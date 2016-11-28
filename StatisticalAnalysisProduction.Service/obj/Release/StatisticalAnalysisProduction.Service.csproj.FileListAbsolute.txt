@@ -10,3 +10,15 @@ C:\工作\编程\恒拓软件\三层框架V3.1\StatisticalAnalysisProduction\Sta
 C:\工作\编程\恒拓软件\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\obj\Release\StatisticalAnalysisProduction.Service.csprojResolveAssemblyReference.cache
 C:\工作\编程\恒拓软件\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\obj\Release\StatisticalAnalysisProduction.Service.dll
 C:\工作\编程\恒拓软件\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\obj\Release\StatisticalAnalysisProduction.Service.pdb
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\bin\Release\StatisticalAnalysisProduction.Service.dll
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\bin\Release\StatisticalAnalysisProduction.Service.pdb
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\bin\Release\EasyUIJsonParser.dll
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\bin\Release\RunIndicators.dll
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\bin\Release\SqlServerDataAdapter.dll
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\bin\Release\StatisticalAnalysisProduction.Infrastructure.dll
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\bin\Release\AutoMapper.dll
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\bin\Release\StatisticalAnalysisProduction.Infrastructure.pdb
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\bin\Release\RunIndicators.pdb
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\obj\Release\StatisticalAnalysisProduction.Service.csprojResolveAssemblyReference.cache
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\obj\Release\StatisticalAnalysisProduction.Service.dll
+C:\工作\编程\三层框架V3.1\StatisticalAnalysisProduction\StatisticalAnalysisProduction.Service\obj\Release\StatisticalAnalysisProduction.Service.pdb

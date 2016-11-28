@@ -85,7 +85,10 @@
                                 </td>
                                 <td>主要设备</td>
                                 <td style="width: 130px;">
-                                    <select id="Combobox_EquipmentCommonF" class="easyui-combobox" name="Combobox_EquipmentCommonF" data-options="panelHeight:'auto', editable:true, valueField: 'EquipmentCommonId',textField: 'Name'" style="width: 120px;"></select>
+                                    <select id="Combobox_EquipmentCommonF" class="easyui-combobox" name="Combobox_EquipmentCommonF" data-options="panelHeight:'auto', editable:true, valueField: 'EquipmentCommonId',textField: 'Name', onSelect: function(myValue){LoadEquipmentInfoByCommonId(myValue.EquipmentCommonId);}" style="width: 120px;"></select>
+                                </td>
+                                <td style="width: 130px;">
+                                    <select id="Combobox_EquipmentF" class="easyui-combobox" name="Combobox_EquipmentF" data-options="panelHeight:'auto', editable:true, valueField: 'EquipmentId',textField: 'EquipmentName'" style="width: 120px;"></select>
                                 </td>
                                 <td>
                                     <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
@@ -123,12 +126,6 @@
                 </tr>
             </thead>
         </table>
-    </div>
-    <div id="dlg_QuickTrend" class="easyui-dialog" style ="width:1000px;height:300px; text-align:center;">
-        <div id="chart_QuickTrend_Content" class="DataChartContent" style ="width:960px;height:230px;">
-        </div>
-        <div id="chart_QuickTrend_Legend" class="DataChartLegend" style ="width:960px;height:20px;">
-        </div>
     </div>
     <form id="formMain" runat="server">
         <div>
