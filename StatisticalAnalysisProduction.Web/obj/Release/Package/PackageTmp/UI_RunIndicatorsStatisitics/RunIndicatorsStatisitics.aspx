@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="easyui-layout" data-options="fit:true,border:false">
-        <div data-options="region:'west',border:false " style="width: 230px;">
+        <div data-options="region:'west',border:false " style="width: 150px;">
             <uc1:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
         <div id="toolbar_ProductionResultInfo" style="display: none;">
@@ -39,14 +39,6 @@
                                 <td style="width: 100px;">
                                     <input id="TextBox_OrganizationText" class="easyui-textbox" data-options="editable:true" style="width: 90px;" />
                                 </td>
-                                <td>主要设备</td>
-                                <td style="width: 100px;">
-                                    <select id="Combobox_EquipmentCommonF" class="easyui-combobox" name="Combobox_EquipmentCommonF" data-options="panelHeight:'auto', editable:true, valueField: 'EquipmentCommonId',textField: 'Name', onSelect:function(record){ChangeSpecifications(record.EquipmentCommonId);}" style="width: 90px;"></select>
-                                </td>
-                                <td>规格型号</td>
-                                <td style="width: 140px;">
-                                    <select id="Combobox_SpecificationsF" class="easyui-combobox" name="Combobox_SpecificationsF" data-options="panelHeight:'auto', editable:false, valueField: 'id',textField: 'text'" style="width: 130px;"></select>
-                                </td>
                                 <td>指标排序</td>
                                 <td style="width: 120px;">
                                     <select id="Combobox_RunindicatorsOrderF" class="easyui-combobox" name="Combobox_RunindicatorsOrderF" data-options="panelHeight:'auto', editable:false, valueField: 'EquipmentCommonId',textField: 'Name'" style="width: 110px;">
@@ -62,6 +54,22 @@
                                 <td>
                                     <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
                                         onclick="RefreshStatisitics();">查询</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>主要设备</td>
+                                <td>
+                                    <select id="Combobox_EquipmentCommonF" class="easyui-combobox" name="Combobox_EquipmentCommonF" data-options="panelHeight:'auto', editable:true, valueField: 'EquipmentCommonId',textField: 'Name', onSelect:function(record){ChangeSpecifications(record.EquipmentCommonId);}" style="width: 80px;"></select>
+                                </td>
+                                <td>规格型号</td>
+                                <td>
+                                    <select id="Combobox_SpecificationsF" class="easyui-combobox" name="Combobox_SpecificationsF" data-options="panelHeight:'auto', editable:false, valueField: 'id',textField: 'text'" style="width: 90px;"></select>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
                                 </td>
                                 <td>
                                     <input id="TextBox_OrganizationId" style="width: 10px; visibility: hidden;" />
@@ -81,10 +89,10 @@
                                 <th data-options="field:'EquipmentId',width:110, hidden:true">设备ID</th>
                                 <th data-options="field:'OrganizationName',width:100">组织机构</th>
                                 <th data-options="field:'EquipmentName',width:100">设备名称</th>
-                                <th data-options="field:'运转率',width:100">运转率(%)</th>
-                                <th data-options="field:'可靠性',width:100">可靠性(%)</th>
-                                <th data-options="field:'故障率',width:100">故障率(%)</th>
-                                <th data-options="field:'台时产量',width:100">台时产量(t/h)</th>
+                                <th data-options="field:'运转率',width:90">运转率(%)</th>
+                                <th data-options="field:'可靠性',width:90">可靠性(%)</th>
+                                <th data-options="field:'故障率',width:90">故障率(%)</th>
+                                <th data-options="field:'台时产量',width:90">台时产量(t/h)</th>
                                 <th data-options="field:'运转时间',width:100">运转时间(h)</th>
                                 <th data-options="field:'计划检修时间',width:100">计划检修时间(h)</th>
                             </tr>
@@ -99,16 +107,16 @@
                                 <th data-options="field:'StatisticsCycle',width:60">统计周期</th>
                                 <th data-options="field:'EquipmentId',width:110, hidden:true">设备ID</th>
                                 <th data-options="field:'EquipmentName',width:100">设备名称</th>
-                                <th data-options="field:'DowntimeCount',width:80">总次数</th>
-                                <th data-options="field:'ProcessDowntimeCount',width:80">工艺故障</th>
-                                <th data-options="field:'MechanicalDowntimeCount',width:80">机械故障</th>
-                                <th data-options="field:'ElectricalDowntimeCount',width:80">电气故障</th>
-                                <th data-options="field:'EnvironmentDowntimeCount',width:80">环境停机</th>
-                                <th data-options="field:'DowntimeTime',width:80">总时间</th>
-                                <th data-options="field:'ProcessDowntimeTime',width:80">工艺故障</th>
-                                <th data-options="field:'MechanicalDowntimeTime',width:80">机械故障</th>
-                                <th data-options="field:'ElectricalDowntimeTime',width:80">电气故障</th>
-                                <th data-options="field:'EnvironmentDowntimeTime',width:80">环境停机</th>
+                                <th data-options="field:'DowntimeCount',width:60">总次数</th>
+                                <th data-options="field:'ProcessDowntimeCount',width:60">工艺故障</th>
+                                <th data-options="field:'MechanicalDowntimeCount',width:60">机械故障</th>
+                                <th data-options="field:'ElectricalDowntimeCount',width:60">电气故障</th>
+                                <th data-options="field:'EnvironmentDowntimeCount',width:60">环境停机</th>
+                                <th data-options="field:'DowntimeTime',width:70">总时间</th>
+                                <th data-options="field:'ProcessDowntimeTime',width:60">工艺故障</th>
+                                <th data-options="field:'MechanicalDowntimeTime',width:60">机械故障</th>
+                                <th data-options="field:'ElectricalDowntimeTime',width:60">电气故障</th>
+                                <th data-options="field:'EnvironmentDowntimeTime',width:60">环境停机</th>
                             </tr>
                         </thead>
                     </table>

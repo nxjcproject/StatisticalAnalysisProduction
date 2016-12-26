@@ -184,13 +184,14 @@ namespace StatisticalAnalysisProduction.Service.RunIndicatorsStatisitics
 
                 }
             }
-
-            string m_ReturnString = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(m_MachineHaltInfoFinallyTable);
+            DataView m_MachineHaltInfoFinallyView = m_MachineHaltInfoFinallyTable.DefaultView;
+            m_MachineHaltInfoFinallyView.Sort = "OrganizationName, StatisticsCycle, EquipmentName asc";  
+            string m_ReturnString = EasyUIJsonParser.DataGridJsonParser.DataTableToJson(m_MachineHaltInfoFinallyView.ToTable());
             return m_ReturnString;
         }
         private static DataTable GetOrganizationInfo(string myOrganizationId)
         {
-            string m_Sql = @"SELECT A.OrganizationID as OrganizationId
+            string m_Sql = @"SELECT B.OrganizationID as OrganizationId
 	                              ,C.Name as OrganizationName
 	                              ,B.LevelCode as OrganizationLevelCode
                               FROM system_Organization A, system_Organization B

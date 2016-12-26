@@ -66,6 +66,11 @@ function RefreshStatisitics() {
     var m_OrganizationId = $('#TextBox_OrganizationId').val();
     var m_EquipmentId = $('#Combobox_EquipmentF').combobox('getValue');
     var m_StartYear = $('#StartTimeF').datetimespinner('getValue');
+    $.messager.progress({
+        title: 'Please waiting',
+        msg: 'Loading data...'
+    });
+
     if (m_OrganizationId != undefined && m_OrganizationId != null && m_EquipmentId != ""
         && m_EquipmentId != undefined && m_StartYear != null && m_StartYear != "") {
 
@@ -77,9 +82,13 @@ function RefreshStatisitics() {
             dataType: "json",
             success: function (msg) {
                 var m_MsgData = jQuery.parseJSON(msg.d);
+                $.messager.progress('close');
                 if (m_MsgData != null && m_MsgData != undefined) {
                     $('#grid_MasterMachineHaltInfo').datagrid('loadData', m_MsgData);
                 }
+            },
+            error: function (msg) {
+                $.messager.progress('close');
             }
         });
     }

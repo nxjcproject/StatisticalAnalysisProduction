@@ -18,7 +18,7 @@
     <link type="text/css" rel="stylesheet" href="/lib/pllib/syntaxhighlighter/styles/shThemejqPlot.min.css" />
     <link type="text/css" rel="stylesheet" href="/css/common/charts.css" />
     <link type="text/css" rel="stylesheet" href="/css/common/NormalPage.css" />
-    <%--<link type="text/css" rel="stylesheet" href="/UI_ComprehensiveDailyReport/css/page/DispatchDailyReport.css" />--%>
+    <!--<link type="text/css" rel="stylesheet" href="/UI_ComprehensiveDailyReport/css/page/DispatchDailyReport.css" />-->
     <link rel="stylesheet" type="text/css" href="css/page/Style_OverView_Factory.css" />
 
     <script type="text/javascript" src="/lib/ealib/jquery.min.js" charset="utf-8"></script>
@@ -46,8 +46,8 @@
 
 
 
-    <%--<script type="text/javascript" src="/lib/pllib/themes/jquery.jqplot.js"></script>
-    <script type="text/javascript" src="/lib/pllib/themes/jjquery.jqplot.min.js"></script>--%>
+    <!--<script type="text/javascript" src="/lib/pllib/themes/jquery.jqplot.js"></script>
+    <script type="text/javascript" src="/lib/pllib/themes/jjquery.jqplot.min.js"></script>-->
     <!--[if lt IE 8 ]><script type="text/javascript" src="/js/common/json2.min.js"></script><![endif]-->
 
     <script type="text/javascript" src="/js/common/components/Charts.js" charset="utf-8"></script>
@@ -62,7 +62,7 @@
 </head>
 <body>
     <div class="easyui-layout" data-options="fit:true,border:false">
-        <div data-options="region:'west',border:false " style="width: 230px;">
+        <div data-options="region:'west',border:false " style="width: 150px;">
             <uc1:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
         <div data-options="region:'center',border:false,collapsible:false" style="padding-left: 10px;">
@@ -80,15 +80,15 @@
                                     <input id="StartTimeF" class="easyui-numberspinner" style="width: 80px" required="required" data-options="min:1900,max:9999, editable:false" />
                                 </td>
                                 <td>生产区域</td>
-                                <td style="width: 130px;">
-                                    <input id="TextBox_OrganizationText" class="easyui-textbox" data-options="editable:false, readonly:true" style="width: 120px;" />
+                                <td style="width: 100px;">
+                                    <input id="TextBox_OrganizationText" class="easyui-textbox" data-options="editable:false, readonly:true" style="width: 90px;" />
                                 </td>
                                 <td>主要设备</td>
-                                <td style="width: 130px;">
-                                    <select id="Combobox_EquipmentCommonF" class="easyui-combobox" name="Combobox_EquipmentCommonF" data-options="panelHeight:'auto', editable:true, valueField: 'EquipmentCommonId',textField: 'Name', onSelect: function(myValue){LoadEquipmentInfoByCommonId(myValue.EquipmentCommonId);}" style="width: 120px;"></select>
+                                <td style="width: 90px;">
+                                    <select id="Combobox_EquipmentCommonF" class="easyui-combobox" name="Combobox_EquipmentCommonF" data-options="panelHeight:'auto', editable:true, valueField: 'EquipmentCommonId',textField: 'Name', onSelect: function(myValue){LoadEquipmentInfoByCommonId(myValue.EquipmentCommonId);}" style="width: 80px;"></select>
                                 </td>
-                                <td style="width: 130px;">
-                                    <select id="Combobox_EquipmentF" class="easyui-combobox" name="Combobox_EquipmentF" data-options="panelHeight:'auto', editable:true, valueField: 'EquipmentId',textField: 'EquipmentName'" style="width: 120px;"></select>
+                                <td style="width: 100px;">
+                                    <select id="Combobox_EquipmentF" class="easyui-combobox" name="Combobox_EquipmentF" data-options="panelHeight:'auto', editable:true, valueField: 'EquipmentId',textField: 'EquipmentName'" style="width: 90px;"></select>
                                 </td>
                                 <td>
                                     <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"

@@ -23,7 +23,7 @@
       <publishTime>04/04/2016 12:02:41</publishTime>
     </File>
     <File Include="bin/RunIndicators.dll">
-      <publishTime>10/12/2016 16:57:12</publishTime>
+      <publishTime>11/25/2016 14:51:35</publishTime>
     </File>
     <File Include="bin/SqlServerDataAdapter.dll">
       <publishTime>07/29/2015 10:56:04</publishTime>
@@ -32,10 +32,10 @@
       <publishTime>10/30/2016 17:53:35</publishTime>
     </File>
     <File Include="bin/StatisticalAnalysisProduction.Service.dll">
-      <publishTime>11/01/2016 14:20:28</publishTime>
+      <publishTime>12/21/2016 10:15:34</publishTime>
     </File>
     <File Include="bin/StatisticalAnalysisProduction.Web.dll">
-      <publishTime>11/01/2016 14:20:29</publishTime>
+      <publishTime>12/21/2016 10:15:35</publishTime>
     </File>
     <File Include="bin/WebStyleBaseForEnergy.dll">
       <publishTime>01/18/2016 14:08:49</publishTime>
@@ -4580,19 +4580,19 @@
       <publishTime>09/20/2016 11:23:02</publishTime>
     </File>
     <File Include="UI_RunIndicatorsStatisitics/js/page/RunIndicatorsStatisiticsMonthly.js">
-      <publishTime>07/07/2016 16:32:23</publishTime>
+      <publishTime>12/21/2016 10:12:21</publishTime>
     </File>
     <File Include="UI_RunIndicatorsStatisitics/js/page/TimeLineChart.js">
       <publishTime>04/28/2016 09:20:47</publishTime>
     </File>
     <File Include="UI_RunIndicatorsStatisitics/RunIndicatorsStatisitics.aspx">
-      <publishTime>09/20/2016 11:25:53</publishTime>
+      <publishTime>12/21/2016 11:12:19</publishTime>
     </File>
     <File Include="UI_RunIndicatorsStatisitics/RunIndicatorsStatisiticsMonthly.aspx">
-      <publishTime>07/07/2016 16:29:39</publishTime>
+      <publishTime>12/21/2016 11:12:19</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/01/2016 14:20:56</publishTime>
+      <publishTime>12/21/2016 11:12:42</publishTime>
     </File>
   </ItemGroup>
 </Project>
