@@ -18,7 +18,7 @@ namespace StatisticalAnalysisProduction.Web.UI_RunIndicatorsStatisitics
             {
                 ////////////////////调试用,自定义的数据授权
 #if DEBUG
-                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_ychc", "zc_nxjc_byc","zc_nxjc_znc" };
+                List<string> m_DataValidIdItems = new List<string>() { "zc_nxjc_ychc", "zc_nxjc_byc", "zc_nxjc_znc", "zc_nxjc_qtx" };
                 AddDataValidIdGroup("ProductionOrganization", m_DataValidIdItems);
                 mPageOpPermission = "1111";
 #elif RELEASE
