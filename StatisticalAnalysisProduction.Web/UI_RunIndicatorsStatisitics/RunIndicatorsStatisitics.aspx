@@ -35,7 +35,7 @@
                                 <td style="width: 90px;">
                                     <input id="StartTimeF" class="easyui-datetimespinner" data-options="editable:false" style="width: 80px" />
                                 </td>
-                                <td>生产区域</td>
+                                <td>组织机构</td>
                                 <td style="width: 100px;">
                                     <input id="TextBox_OrganizationText" class="easyui-textbox" data-options="editable:true" style="width: 90px;" />
                                 </td>

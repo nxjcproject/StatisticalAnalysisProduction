@@ -65,7 +65,7 @@
         <div data-options="region:'west',border:false " style="width: 150px;">
             <uc1:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
-        <div data-options="region:'center',border:false,collapsible:false" style="padding-left: 10px;">
+        <div data-options="region:'center',border:false,collapsible:false">
             <table id="grid_MasterMachineHaltInfo" class="easyui-datagrid" data-options="fit:true, rownumbers: true,striped:true, singleSelect:true, border:true">
             </table>
         </div>
@@ -75,11 +75,11 @@
                     <td>
                         <table>
                             <tr>
-                                <td>选择年份</td>
+                                <td style="width: 50px; text-align: right;">选择年份</td>
                                 <td style="width: 90px;">
                                     <input id="StartTimeF" class="easyui-numberspinner" style="width: 80px" required="required" data-options="min:1900,max:9999, editable:false" />
                                 </td>
-                                <td>生产区域</td>
+                                <td>组织机构</td>
                                 <td style="width: 100px;">
                                     <input id="TextBox_OrganizationText" class="easyui-textbox" data-options="editable:false, readonly:true" style="width: 90px;" />
                                 </td>
@@ -91,7 +91,7 @@
                                     <select id="Combobox_EquipmentF" class="easyui-combobox" name="Combobox_EquipmentF" data-options="panelHeight:'auto', editable:true, valueField: 'EquipmentId',textField: 'EquipmentName'" style="width: 90px;"></select>
                                 </td>
                                 <td>
-                                    <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
+                                    <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'"
                                         onclick="RefreshStatisitics();">查询</a>
                                 </td>
                                 <td>

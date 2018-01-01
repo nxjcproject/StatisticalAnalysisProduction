@@ -137,62 +137,62 @@ function InitializeGrid(myData) {
 
         }]],
         columns: [[{
-            width: '70',
+            width: '65',
             title: '1月',
             field: '01'
 
         }, {
-            width: '70',
+            width: '65',
             title: '2月',
             field: '02'
 
         }, {
-            width: '70',
+            width: '65',
             title: '3月',
             field: '03'
 
         }, {
-            width: '70',
+            width: '65',
             title: '4月',
             field: '04'
 
         }, {
-            width: '70',
+            width: '65',
             title: '5月',
             field: '05'
 
         }, {
-            width: '70',
+            width: '65',
             title: '6月',
             field: '06'
 
         }, {
-            width: '70',
+            width: '65',
             title: '7月',
             field: '07'
 
         }, {
-            width: '70',
+            width: '65',
             title: '8月',
             field: '08'
 
         }, {
-            width: '70',
+            width: '65',
             title: '9月',
             field: '09'
 
         }, {
-            width: '70',
+            width: '65',
             title: '10月',
             field: '10'
 
         }, {
-            width: '70',
+            width: '65',
             title: '11月',
             field: '11'
 
         }, {
-            width: '70',
+            width: '65',
             title: '12月',
             field: '12'
 
