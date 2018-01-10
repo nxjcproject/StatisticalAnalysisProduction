@@ -52,7 +52,7 @@
                                     </select>
                                 </td>
                                 <td>
-                                    <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true"
+                                    <a href="javascript:void(0);" class="easyui-linkbutton" data-options="iconCls:'icon-search'"
                                         onclick="RefreshStatisitics();">查询</a>
                                 </td>
                             </tr>
